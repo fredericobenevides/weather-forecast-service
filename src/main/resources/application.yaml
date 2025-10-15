@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: weather-service
+
+api:
+  weather:
+    current:
+      - temperature_2m
+    daily:
+      - temperature_2m_max
+      - temperature_2m_min
+    forecast-days: 7
+    temperature-unit: fahrenheit
+    timezone: America/Los_Angeles
+    url: https://api.open-meteo.com/v1/forecast
+
+  zipcode:
+    country-codes: us
+    format: json
+    limit: 1
+    url: https://nominatim.openstreetmap.org/search
