@@ -56,26 +56,4 @@ public class WeatherServiceTest {
         assertNotNull(result);
         assertEquals(expectedWeatherData, result);
     }
-
-//        @Test
-//        void getZipCodeData_whenApiReturnsEmptyData_ExpectException() {
-//            double latitude = 200;
-//            double longitude = 200;
-//            ZipCodeDataDTO[] zipCodeResponse = new ZipCodeDataDTO[]{};
-//
-//            when(restClient.get().uri(any(Function.class)).retrieve().body(ZipCodeDataDTO[].class)).thenReturn(zipCodeResponse);
-//
-//            assertThrows(ResponseStatusException.class, () -> zipCodeService.getZipCodeData(zipCode));
-//        }
-
-//        @Test
-//        void getZipCodeData_whenApiReturns4xx_ExpectException() {
-//            String zipCode = "123123123";
-//            ZipCodeDataDTO[] zipCodeResponse = new ZipCodeDataDTO[]{};
-//
-//            when(restClient.get().uri(any(Function.class)).retrieve().body(ZipCodeDataDTO[].class)).thenReturn(zipCodeResponse);
-//
-//            assertThrows(ResponseStatusException.class, () -> zipCodeService.getZipCodeData(zipCode));
-//        }
 }
-
