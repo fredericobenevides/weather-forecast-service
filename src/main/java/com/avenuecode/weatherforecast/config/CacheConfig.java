@@ -1,6 +1,7 @@
 package com.avenuecode.weatherforecast.config;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
@@ -15,9 +16,12 @@ public class CacheConfig {
 
     public final static String CACHE = "weatherForecastCache";
 
+    @Value("${cache.duration}")
+    private int cacheDuration;
+
     @Bean
     public Caffeine<Object, Object> caffeine() {
-        return Caffeine.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES);
+        return Caffeine.newBuilder().expireAfterWrite(cacheDuration, TimeUnit.MINUTES);
     }
 
     @Bean
